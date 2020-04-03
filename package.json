@@ -1,0 +1,26 @@
+{
+  "name": "dndflow",
+  "version": "1.0.0",
+  "description": "task flow",
+  "main": "server.js",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "cd client && npm run serve",
+    "dev": "concurrently --names \"server,client\" \"npm run server --silent\" \"npm run client --silent\""
+  },
+  "author": "Des Albert",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.11.0",
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "graphql": "^14.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "md5": "^2.2.1",
+    "mongoose": "^5.9.5"
+  },
+  "devDependencies": {
+    "concurrently": "^5.1.0",
+    "nodemon": "^2.0.2"
+  }
+}
