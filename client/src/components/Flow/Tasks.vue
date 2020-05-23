@@ -2,10 +2,9 @@
   <v-container>
     <v-row justify='center'>
       <v-col v-for="(stage, index) in stages" :key='index'>
-
-        <draggable :list="buckets[stage]" group="openTasks" :move='handleMove'>
+        <draggable :list="buckets[stage]" group="openTasks" :move='handleMove' :disabled='dragDisabled'>
           <span slot="header" :tag="stage" class="card-text-bold">{{ stage }}</span>
-          <v-card color="commentCard" class="list-group mt-3" v-for="task in buckets[stage]" :key="task._id">
+          <v-card hover color="signInForm" class="list-group mt-3" v-for="task in buckets[stage]" :key="task._id">
             <v-card-text>
 
               <span class="card-text-bold">{{ task.title}}</span>
@@ -40,12 +39,14 @@ export default {
 
   data() {
     return {
-      stages: ['created', 'assigned', 'in progress', 'on hold', 'complete', 'archive']
+      stages: ['created', 'assigned', 'in progress', 'on hold', 'complete', 'archive'],
+      dragDisabled: true
     };
   },
 
   created() {
     this.handleGetTasks();
+    this.dragDisabled = this.user.role === 'Requester';
   },
 
   computed: {

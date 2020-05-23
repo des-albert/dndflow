@@ -54,7 +54,7 @@
       </v-row>
 
       <v-row justify="space-around">
-        <v-btn :loading="loading" :disabed="!isFormValid || loading" color="button" type="submit" class="mt-3">
+        <v-btn :loading="loading" :disabled="!isFormValid || loading" color="button" type="submit" class="mt-3">
           <span slot="loader" class="custom-loader">
             <v-icon color="button">mdi-reload</v-icon>
           </span>

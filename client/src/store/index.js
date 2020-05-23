@@ -34,7 +34,7 @@ export default new Vuex.Store({
     user: null
   },
   mutations: {
-    addTask: (state, payload) => {
+    newTask: (state, payload) => {
       state.tasks.push(payload);
     },
 
@@ -97,7 +97,7 @@ export default new Vuex.Store({
         })
         .then(({ data }) => {
           commit('setLoading', false);
-          commit('addTask', data.addTask);
+          commit('newTask', data.addTask);
         })
         .catch(err => {
           commit('setLoading', false);
