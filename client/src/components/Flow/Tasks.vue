@@ -54,9 +54,6 @@ export default {
   },
 
   methods: {
-    getTimeFromNow(time) {
-      return moment(new Date(time)).fromNow();
-    },
     goToTask(taskId) {
       this.$router.push(`/task/${taskId}`);
     },

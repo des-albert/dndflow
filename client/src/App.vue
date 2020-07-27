@@ -76,7 +76,7 @@
 
     <!-- App Content -->
 
-    <v-content>
+    <v-main>
       <v-container class="mt-3">
         <transition name="fade" mode="out-in" duration="250">
           <router-view />
@@ -99,7 +99,7 @@
         </v-snackbar>
 
       </v-container>
-    </v-content>
+    </v-main>
   </v-app>
 </template>
 
@@ -119,7 +119,7 @@ export default {
   },
 
   watch: {
-    user: function(newValue, oldValue) {
+    user: function (newValue, oldValue) {
       if (oldValue === null) {
         this.authSnackbar = true;
       }

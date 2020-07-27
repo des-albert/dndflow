@@ -34,18 +34,22 @@ export default new Vuex.Store({
     user: null
   },
   mutations: {
-    newTask: (state, payload) => {
-      state.tasks.push(payload);
-    },
-
     clearError: state => (state.error = null),
 
     clearSearchResults: state => (state.searchResults = []),
 
     clearUser: state => (state.user = null),
 
+    newTask: (state, payload) => {
+      state.tasks.push(payload);
+    },
+
     setAssignees: (state, payload) => {
       state.assignees = payload;
+    },
+
+    setAuthError: (state, payload) => {
+      state.authError = payload;
     },
     setLoading: (state, payload) => {
       state.loading = payload;
@@ -53,9 +57,7 @@ export default new Vuex.Store({
     setError: (state, payload) => {
       state.error = payload;
     },
-    setAuthError: (state, payload) => {
-      state.authError = payload;
-    },
+
     setSearchResults: (state, payload) => {
       if (payload !== null) {
         state.searchResults = payload;
@@ -161,6 +163,7 @@ export default new Vuex.Store({
           console.error(err);
         });
     },
+
     // User Queries
 
     getCurrentUser: ({ commit }) => {
