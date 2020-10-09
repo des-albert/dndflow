@@ -46,7 +46,7 @@ export default {
 
   created() {
     this.handleGetTasks();
-    this.dragDisabled = this.user.role === 'Requester';
+    this.dragDisabled = localStorage.getItem('role') === 'Requester';
   },
 
   computed: {

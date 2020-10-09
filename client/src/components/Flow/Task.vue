@@ -185,14 +185,6 @@ export default {
         taskId: this.taskId,
         fullname: this.assignee
       });
-
-      if (this.user.role === 'Manager') {
-        this.$store.dispatch('changeStatus', {
-          taskId: this.taskId,
-          status: 'assigned'
-        });
-      }
-
       this.$router.push('/tasks');
     },
     handleAddComment() {
